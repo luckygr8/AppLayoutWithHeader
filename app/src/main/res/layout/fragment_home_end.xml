@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#ddd"
+        android:elevation="10dp"
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="30dp"/>
+
+        <EditText
+            android:hint="Search..."
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp"
+        android:id="@+id/appbar"
+        android:background="#000"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/Toolbar.Light"
+            app:title="HOME">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:elevation="5dp"
+                    android:id="@+id/search"
+                    android:layout_marginEnd="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:src="@drawable/ic_search"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <ImageButton
+                    android:elevation="5dp"
+                    android:id="@+id/filter"
+                    android:layout_marginEnd="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/search"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:src="@drawable/ic_filter_list_black"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:id="@+id/sortandfilterview"
+        android:paddingBottom="20dp"
+        android:background="#000"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0.001dp">
+
+        <Spinner
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:id="@+id/sortby"
+            android:background="@drawable/rounded_corners_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/value1"
+                android:layout_margin="10dp"
+                android:hint="      value 1"
+                android:background="@drawable/rounded_corners_transparent"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="50dp"/>
+            <EditText
+                android:id="@+id/value2"
+                android:layout_margin="10dp"
+                android:hint="      value 2"
+                android:background="@drawable/rounded_corners_transparent"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/calculate"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners_transparent"
+            android:layout_gravity="center"
+            android:text="DONE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
